@@ -5,15 +5,22 @@ const parolaScelta = prompt('Scegli una parola da analizzare');
 let output ='La parola scelta NON è palindroma';
 const content = document.getElementById('content');
 
-//chiamo la funzione che controlla se la parola scelta è palindroma oppure no
-let result = palindromeCheck(parolaScelta);
-console.log(result);
-//definisco l'output
-if(result) {
-  output = 'La parola scelta è palindroma.'
+//controllo validità
+if (parolaScelta !== '') {
+  //chiamo la funzione che controlla se la parola scelta è palindroma oppure no
+  let result = palindromeCheck(parolaScelta);
+  console.log(result);
+  //definisco l'output
+  if(result) {
+    output = 'La parola scelta è palindroma.'
+  }
+  //stampo a schermo l'output
+  content.innerHTML = output;
+} else {
+  content.innerHTML = 'Errore. Inserisci una parola valida. Ricarica la pagina per riprovare.';  
 }
-//stampo a schermo l'output
-content.innerHTML = output;
+
+
 
 
 
